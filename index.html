@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Вывод результатов происходит в консоль</p>
+    <script>
+      // Задание №1
+      function getGreetingMessage(login) {
+        return login == "Сотрудник"
+          ? "Привет"
+          : login == "Директор"
+          ? "Здравствуйте"
+          : login == ""
+          ? "Нет логина"
+          : "";
+      }
+
+      ["Сотрудник", "Директор", ""].forEach((job) => {
+        console.log(
+          "Job: '" + job + "' => Greeting: '" + getGreetingMessage(job) + "'"
+        );
+      });
+
+      // Задание №2
+      function getMonthName(monthNumber) {
+        let monthName;
+        switch (monthNumber) {
+          case 1:
+            monthName = "Январь";
+            break;
+          case 2:
+            monthName = "Февраль";
+            break;
+          case 3:
+            monthName = "Март";
+            break;
+          case 4:
+            monthName = "Апрель";
+            break;
+          case 5:
+            monthName = "Май";
+            break;
+          case 6:
+            monthName = "Июнь";
+            break;
+          case 7:
+            monthName = "Июль";
+            break;
+          case 8:
+            monthName = "Август";
+            break;
+          case 9:
+            monthName = "Сентябрь";
+            break;
+          case 10:
+            monthName = "Октябрь";
+            break;
+          case 11:
+            monthName = "Ноябрь";
+            break;
+          case 12:
+            monthName = "Декабрь";
+            break;
+          default:
+            monthName = "Ошибка ввода";
+            break;
+        }
+        return monthName;
+      }
+
+      let monthNumber = +prompt(
+        "Пожалуйста введите номер месяца (от 1 до 12). Введите 0 или любую букв(у/ы), чтобы закончить.",
+        1
+      );
+      console.log(getMonthName(monthNumber));
+
+      // Задание №3
+      function isSimpleNumber(num) {
+        if (num <= 1) return false;
+        if (num == 2 || num == 3) return true;
+        if (num % 2 == 0 || num % 3 == 0) return false;
+        for (let i = 5; i * i <= num; i += 6)
+          if (num % i == 0 || num % (i + 2) == 0) return false;
+        return true;
+      }
+
+      console.log("Простые числа: ");
+      for (let i = 0; i <= 10; i++) {
+        if (isSimpleNumber(i)) console.log(i);
+      }
+
+      // Задание №4
+      function reverseanumber(n) {
+        // 1. Преобразовываем число в строку
+        // 2. Преобразовываем строку в массив символов
+        // 3. Переставляем символы в реверсном порядке
+        // 4. Объединяем символы в строку
+        let str = String(n).split("").reverse().join("");
+        // 5. Преобразовываем строку в число и возвращаем значение
+        return +str;
+      }
+
+      console.log("Реверс написания числа 258961:");
+      console.log(reverseanumber(258961)); // 169852
+    </script>
+  </body>
+</html>
