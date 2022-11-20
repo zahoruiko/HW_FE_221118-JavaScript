@@ -10,6 +10,7 @@
     <p>Вывод результатов происходит в консоль</p>
     <script>
       // Задание №1
+      console.log("Преобразование условия в тренарный вид:");
       function getGreetingMessage(login) {
         return login == "Сотрудник"
           ? "Привет"
@@ -27,6 +28,7 @@
       });
 
       // Задание №2
+      console.log("Вывод названия месяца по его номеру: ");
       function getMonthName(monthNumber) {
         let monthName;
         switch (monthNumber) {
@@ -74,18 +76,23 @@
       }
 
       let monthNumber = +prompt(
-        "Пожалуйста введите номер месяца (от 1 до 12). Введите 0 или любую букв(у/ы), чтобы закончить.",
+        "Пожалуйста введите номер месяца (от 1 до 12):",
         1
       );
-      console.log(getMonthName(monthNumber));
+      console.log("Номер месяца: " + monthNumber + " => " + getMonthName(monthNumber));
 
       // Задание №3
       function isSimpleNumber(num) {
-        if (num <= 1) return false;
-        if (num == 2 || num == 3) return true;
-        if (num % 2 == 0 || num % 3 == 0) return false;
+        if (num <= 1) 
+            return false;
+        if (num == 2 || num == 3) 
+            return true;
+        if (num % 2 == 0 || num % 3 == 0) 
+            return false;
         for (let i = 5; i * i <= num; i += 6)
-          if (num % i == 0 || num % (i + 2) == 0) return false;
+          if (num % i == 0 || num % (i + 2) == 0) 
+            return false;
+
         return true;
       }
 
